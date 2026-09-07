@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhiraj Kumar Shastri // Mainframe Developer</title>
+  <meta name="description" content="Portfolio of Dhiraj Kumar Shastri — Mainframe Developer at Tata Consultancy Services, working with COBOL, JCL and DB2 in the global banking domain." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23020a02'/%3E%3Ctext x='4' y='24' font-family='monospace' font-size='22' fill='%2333ff66'%3E%3E_%3C/text%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dhiraj Kumar Shastri // Mainframe Developer" />
+  <meta property="og:description" content="Mainframe Developer at Tata Consultancy Services — COBOL, JCL, DB2 in global banking. An interactive green-phosphor portfolio terminal." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Dhiraj Kumar Shastri // Mainframe Developer" />
+  <meta name="twitter:description" content="Mainframe Developer at Tata Consultancy Services — COBOL, JCL, DB2 in global banking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- CRT overlay effects -->
+  <div class="crt-overlay" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+
+  <!-- Boot screen -->
+  <div id="boot" class="boot">
+    <pre class="boot-log" id="bootLog"></pre>
+    <div class="boot-hint">PRESS <span>[ ENTER ]</span> OR CLICK TO SKIP</div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="topbar" id="topbar">
+    <div class="brand">
+      <span class="blink">█</span> SYS://<strong>MAINFRAME</strong>.PORTFOLIO
+    </div>
+    <nav class="nav">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#experience">EXP</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#awards">AWARDS</a>
+      <a href="#hobbies">HOBBIES</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <button class="power" id="powerBtn" title="Toggle matrix rain">◈ RAIN</button>
+  </header>
+
+  <main>
+    <!-- 1) TITLE / HERO -->
+    <section id="home" class="hero section">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="tag">// SYSTEM ONLINE</div>
+          <h1 class="glitch" data-text="MAINFRAME">MAINFRAME</h1>
+          <p class="subtitle">DHIRAJ&nbsp;KUMAR&nbsp;SHASTRI</p>
+          <p class="role">MAINFRAME DEVELOPER @ TATA CONSULTANCY SERVICES</p>
+          <p class="lede">
+            Welcome, operator. You have accessed Dhiraj's living portfolio, rendered in
+            green phosphor. Type a command below or explore the console.
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="#about">> RUN PORTFOLIO</a>
+            <a class="btn ghost" href="assets/documents/resume.pdf" download>> DOWNLOAD CV</a>
+            <button class="btn ghost" id="playGameBtn">> PLAY: BUG HUNT</button>
+          </div>
+        </div>
+
+        <!-- Interactive terminal -->
+        <div class="hero-right">
+          <div class="terminal" id="terminal">
+            <div class="term-bar">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="term-title">tty1 — operator@mainframe</span>
+            </div>
+            <div class="term-body" id="termBody">
+              <div class="term-line">Type <b>help</b> to list commands.</div>
+            </div>
+            <div class="term-input">
+              <span class="prompt">operator@mainframe:~$</span>
+              <input id="termInput" autocomplete="off" spellcheck="false" aria-label="terminal input" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) ABOUT ME -->
+    <section id="about" class="section">
+      <h2 class="sec-title"><span>02</span> ABOUT_ME</h2>
+      <div class="panel about-grid">
+        <div class="profile-card">
+          <div class="profile-frame">
+            <img src="assets/images/profile.jpg" alt="Portrait of Dhiraj Kumar Shastri"
+                 class="profile-img" loading="lazy"
+                 onerror="this.closest('.profile-frame').classList.add('no-img')" />
+            <pre class="ascii" aria-hidden="true">
+   ______________
+  |  ___________  |
+  | |  OP:_    | |
+  | | ONLINE   | |
+  | |__________| |
+  |______________|
+  \\==============/</pre>
+            <span class="profile-scan" aria-hidden="true"></span>
+          </div>
+          <div class="profile-cap">> SYSADMIN: D. SHASTRI</div>
+        </div>
+        <div>
+          <p>
+            Detail-oriented <b>Mainframe Developer</b> with 2.5+ years building and maintaining
+            enterprise banking applications (BFSI) for ABN AMRO at TCS. I work daily with
+            COBOL, JCL, DB2, SQL and IBM&nbsp;z/OS — across batch processing, enhancements,
+            debugging, production support and performance tuning.
+          </p>
+          <p>
+            Strong in end-to-end SDLC, root cause analysis and code optimization within an
+            onsite–offshore model. Currently open to roles where I can grow across mainframe
+            modernization, cloud, DevOps and modern software engineering.
+          </p>
+          <ul class="stats">
+            <li><b>2.5+</b><span>YEARS EXPERIENCE</span></li>
+            <li><b>BFSI</b><span>DOMAIN EXPERTISE</span></li>
+            <li><b>7+</b><span>AWARDS & RECOGNITIONS</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2 class="sec-title"><span>03</span> EXPERIENCE.LOG</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">JAN 2024 — PRESENT</div>
+          <div class="panel tl-card">
+            <h3>Assistant System Engineer</h3>
+            <div class="tl-org">TATA CONSULTANCY SERVICES · MUMBAI, INDIA</div>
+            <ul class="tl-points">
+              <li>Develop and enhance COBOL batch applications supporting Interest Calculation systems for enterprise banking operations.</li>
+              <li>Implement business requirements and application enhancements using COBOL, JCL, DB2, and VSAM across the software development lifecycle.</li>
+              <li>Perform root cause analysis and resolve critical production abends, including S0C7 and S0C4, helping maintain application stability and minimize downtime.</li>
+              <li>Improve application and batch processing efficiency through code analysis, debugging, and performance tuning, achieving execution-time improvements of up to 20%.</li>
+              <li>Collaborated with business and cross-functional Mainframe teams during development, UAT, production support, and release activities.</li>
+              <li>Initiated and developed a Code Journey Agent and Mainframe Use Case skills in VS Code to improve developer efficiency in understanding and working with Mainframe applications; shared the solution through Azure Repos for adoption across Mainframe teams.</li>
+              <li>Received the “Best Rookie” award 2025 for exceptional performance, commitment and contribution during the first year at TCS.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) TECHNICAL SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="sec-title"><span>04</span> TECH_SKILLS.SYS</h2>
+      <div class="panel skills-grid" id="skillsGrid">
+
+        <!-- Mainframe Development -->
+        <div class="skill-category">
+            <h3>Mainframe Development</h3>
+    
+            <div class="skill" data-level="90">
+                <span class="skill-name">COBOL / JCL</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="88">
+                <span class="skill-name">IBM z/OS</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="85">
+                <span class="skill-name">DB2 / SQL</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="82">
+                <span class="skill-name">VSAM / GDG / PDS</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">TSO / ISPF / Easytrieve</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">IMS DB</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">Mainframe Debugging</span>
+                <div class="bar"><i></i></div>
+            </div>
+        </div>
+
+
+        <!-- DevOps & Cloud -->
+        <div class="skill-category">
+            <h3>DevOps & Cloud</h3>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">Azure DevOps / CI-CD</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="78">
+                <span class="skill-name">Git / Azure Repos</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">DevOps Practices</span>
+                <div class="bar"><i></i></div>
+            </div>
+        </div>
+    
+    
+        <!-- Operations & Support -->
+        <div class="skill-category">
+            <h3>Operations & Support</h3>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">Production Support</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">Incident Management</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">ServiceNow</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">Root Cause Analysis</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">Change Management</span>
+                <div class="bar"><i></i></div>
+            </div>
+        </div>
+    
+    
+        <!-- Agile & Delivery -->
+        <div class="skill-category">
+            <h3>Agile & Delivery</h3>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">Agile Methodology</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">Sprint Planning</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">Code Reviews</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="80">
+                <span class="skill-name">Cross-functional Collaboration</span>
+                <div class="bar"><i></i></div>
+            </div>
+        </div>
+    
+    
+        <!-- Programming & Web -->
+        <div class="skill-category">
+            <h3>Programming & Web</h3>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">Python</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="70">
+                <span class="skill-name">HTML / CSS</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="65">
+                <span class="skill-name">JavaScript</span>
+                <div class="bar"><i></i></div>
+            </div>
+        </div>
+    
+    
+        <!-- AI & Modern Technologies -->
+        <div class="skill-category">
+            <h3>AI & Modern Technologies</h3>
+    
+            <div class="skill" data-level="70">
+                <span class="skill-name">Generative AI</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="75">
+                <span class="skill-name">AI-Assisted Development</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+            <div class="skill" data-level="70">
+                <span class="skill-name">Mainframe Modernization</span>
+                <div class="bar"><i></i></div>
+            </div>
+    
+        </div>
+    
+      </div>
+    </section>
+
+    <!-- 5) AWARDS & ACHIEVEMENTS -->
+    <section id="awards" class="section">
+      <h2 class="sec-title"><span>05</span> AWARDS.DAT</h2>
+      <div class="awards-grid">
+        <div class="panel award"><div class="medal">✦</div><h3>Best Rookie Award</h3><p>Recognized for strong performance and contribution during the early stage of my professional career.</p><span class="year">2025</span></div>
+        <div class="panel award"><div class="medal">✦</div><h3>Special Mention Award</h3><p>Outstanding achievement in the vAIbe Gen AI Adoption challenge.</p><span class="year">2025</span></div>
+        <div class="panel award"><div class="medal">✦</div><h3>Excellence On The Spot (Team)</h3><p>Multiple team awards for consistent delivery and collaboration.</p><span class="year">2024–25</span></div>
+      </div>
+    </section>
+
+    <!-- 6) HOBBIES & INTERESTS -->
+    <section id="hobbies" class="section">
+      <h2 class="sec-title"><span>06</span> HOBBIES.CFG</h2>
+      <div class="hobbies-grid">
+        <div class="panel hobby"><div class="ico">◉</div><h3>Fitness/Sports</h3><p>Strength training, running, cricket and badminton keep me active and competitive. I enjoy setting fitness goals, challenging myself, and staying consistent.</p></div>
+        <div class="panel hobby"><div class="ico">⛰</div><h3>Trekking/Travelling</h3><p>Exploring trails, cities, and new landscapes. I enjoy discovering new places, experiencing different cultures, and taking on outdoor adventures.</p></div>
+        <div class="panel hobby"><div class="ico">◎</div><h3>Photography</h3><p>Capturing landscapes, travel moments, and everyday experiences through photography. I enjoy experimenting with composition and perspective.</p></div>
+        <div class="panel hobby"><div class="ico">▲</div><h3>Video Editing</h3><p>Creating and editing short-form videos with a focus on storytelling, transitions, and visual presentation.</p></div>
+      </div>
+    </section>
+
+    <!-- 7) LET'S TALK / CONTACT -->
+    <section id="contact" class="section">
+      <h2 class="sec-title"><span>07</span> LET'S_TALK</h2>
+      <div class="panel contact-grid">
+        <div class="contact-info">
+          <p>Ready to boot up a project together? Send a transmission and I'll
+             respond within one business cycle.</p>
+          <ul class="contact-list">
+            <li>> EMAIL: <a href="mailto:dhirajshastri.work@gmail.com">dhirajshastri.work@gmail.com</a></li>
+            <li>> LINKEDIN: <a href="https://www.linkedin.com/in/dhiraj-kumar-shastri" target="_blank" rel="noopener noreferrer">/in/dhiraj-kumar-shastri</a></li>
+            <li>> LOCATION: Mumbai, India</li>
+            <li>> STATUS: <span class="online">● AVAILABLE</span></li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <label>NAME
+            <input type="text" name="name" required placeholder="operator name" />
+          </label>
+          <label>EMAIL
+            <input type="email" name="email" required placeholder="you@domain.com" />
+          </label>
+          <label>MESSAGE
+            <textarea name="message" rows="4" required placeholder="type your transmission..."></textarea>
+          </label>
+          <button type="submit" class="btn">> TRANSMIT</button>
+          <div class="form-status" id="formStatus" role="status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> DHIRAJ_SHASTRI.PORTFOLIO — rendered in phosphor green.</div>
+    <div class="foot-meta">EOF // ALL SYSTEMS NOMINAL</div>
+  </footer>
+
+  <!-- Bug Hunt game modal -->
+  <div class="modal" id="gameModal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-head">
+        <span>BUG_HUNT.EXE</span>
+        <button class="modal-close" id="gameClose" aria-label="Close game">✕</button>
+      </div>
+      <div class="game-hud">
+        <span>SCORE: <b id="gScore">0</b></span>
+        <span>TIME: <b id="gTime">20</b></span>
+        <span>BEST: <b id="gBest">0</b></span>
+      </div>
+      <div class="game-field" id="gameField">
+        <div class="game-start" id="gameStart">
+          <p>Squash the bugs before the batch job finishes.<br />Click every <b>🐛</b> you can!</p>
+          <button class="btn" id="gameStartBtn">> START</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
